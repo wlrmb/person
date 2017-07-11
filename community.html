@@ -1,0 +1,307 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>交流社区</title>
+	<link rel="icon" href="img/logo.icon"/>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<style>
+		.navbar{
+			background:#aaa; 
+		}
+		.navbar-brand{
+			background-size:cover;
+			height: 50px;
+			width: 100px;
+			background:url("img/logo.png") no-repeat;
+			background-size:cover;
+		}
+		body{
+			padding-top:70px;
+			color: #000;
+			background:#eeffee;
+		}
+		.navbar-default .navbar-nav>li>a{
+			color: #fff;
+		}
+		.navbar-default .navbar-nav>li>a:hover{
+			color: #0f0;
+		}
+		.form-control{
+			min-width:200px;
+		}
+		.title{
+			border-bottom:3px solid #666;
+			padding:0px;
+		}
+		.pic{
+			padding-right:10px;
+			margin:0px;
+		}
+		#mycarousel,#accordion{
+			background:#eeffee;
+			clear:both;
+		}
+		#accordion a{
+			text-decoration:underline;
+		}
+		.media{
+			border-top:1px solid #DDDDDD;
+			padding:10px 0;
+		}
+		.pager li.active {
+	border: none;
+	background: transparent;
+}
+.pager li.active a {
+	color: #e4393c;
+}
+
+	</style>
+</head>
+<body>
+<!-- 导航栏 -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- TODO 针对移动端的容器 -->
+        <div class="navbar-header">
+            <!-- TODO 汉堡包按钮 -->
+            <button data-target="#mycollapse" data-toggle="collapse" class="navbar-toggle collapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- TODO 品牌图标 -->
+            <a class="navbar-brand" href="index.html"></a>
+        </div>
+        <!-- TODO 包裹导航条组件的容器 -->
+        <div id="mycollapse" class="navbar-collapse collapse">
+            <!-- TODO 语言&登录(居右) -->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a data-toggle="dropdown" href="#">登录</a>
+                    <div class="dropdown-menu">
+                        <!-- TODO 面板组件 -->
+                        <div class="panel">
+                            <div class="panel-body">
+                                <h3>登录</h3>
+                                <form action="#">
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="用户名" type="text"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="密码" type="password"/>
+                                    </div>
+                                    <button class="btn btn-info btn-xs">登录</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+				<li>
+					<a href="register.html">注册</a>
+				</li>
+            </ul>
+            <!-- TODO 搜索框(居右) -->
+            <form class="navbar-form navbar-right" action="#">
+                <p class="form-control-static">查找内容</p>
+                <p class="form-control-static">|</p>
+                <div class="form-group has-feedback">
+                    <input class="form-control" placeholder="搜索" type="search"/>
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+</nav>
+<!-- 主体 -->
+<div class="container">
+	<!-- 第一行-->
+	<div class="row">
+		<!-- 左侧 -->
+		<div class="col-md-8 col-sm-12 col-xs-12">
+            <!-- TODO 引入图片 -->
+            <img class="img-responsive" src="img/5_1.jpg"/>
+        </div>
+		<!-- TODO 第一行右侧内容 -->
+        <div class="col-md-4 col-sm-12 col-xs-12">
+                    <!-- TODO 引入图片 -->
+                    <img class="img-responsive" src="img/weixin.jpg"/>
+        </div>
+	</div>
+	<!-- 第二行 -->
+	<div class="row">
+		<!-- 标题-->
+		<h3 class="title col-md-8 col-sm-8 col-xs-8">健身系列精选 指导</h3>
+		<!----------------->
+	    <div id="mycarousel" data-ride="carousel" class="carousel slide ">
+            <!-- TODO 用于包裹轮播图的图片内容 -->
+            <div class="carousel-inner ">
+                <div class="item active">
+                    <img src="img/b1.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                    <img src="img/b2.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                    <img src="img/b3.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                </div>
+                <div class="item">
+                    <img src="img/b4.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                    <img src="img/b5.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                    <img src="img/b6.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                </div>
+                <div class="item">
+                    <img src="img/b7.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                    <img src="img/b8.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                    <img src="img/b9.jpg" class="col-md-4 col-sm-4 col-xs-4"/>
+                </div>
+            </div>
+
+            <a class="carousel-control left"
+               data-slide="prev"
+               href="#mycarousel">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+            <a class="carousel-control right"
+               data-slide="next"
+               href="#mycarousel">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+            <ol class="carousel-indicators">
+                <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#mycarousel" data-slide-to="1"></li>
+                <li data-target="#mycarousel" data-slide-to="2"></li>
+            </ol>
+        </div>
+	</div>
+	<!-- 第三行 -->
+	<div class="row">
+		<h3 class="title col-md-8 col-sm-8 col-xs-8">健身系列精选 文章</h3>
+        <div id="accordion" class="panel-group">
+            <!-- TODO 面板组件 -->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#c1" data-parent="#accordion"> 别人健身花钱，你们健身要命！</a>
+                    </h4>
+                </div>
+                <div id="c1" class="collapse">
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab iure non sunt tempore veritatis. Ab accusamus ad blanditiis ex. Accusamus ad, explicabo in incidunt nihil reiciendis saepe sequi soluta vel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#c2" data-parent="#accordion">摒弃这些健身偏见，你才能开始健身！</a>
+                    </h4>
+                </div>
+                <div id="c2" class="collapse">
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eius eum, explicabo magnam officiis reiciendis sit ullam voluptate? Consequatur eaque eveniet facere ipsa labore neque nostrum, quibusdam soluta vitae!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#c2" data-parent="#accordion">20分钟=跑步一小时？什么运动这么牛！</a>
+                    </h4>
+                </div>
+                <div id="c2" class="collapse">
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eius eum, explicabo magnam officiis reiciendis sit ullam voluptate? Consequatur eaque eveniet facere ipsa labore neque nostrum, quibusdam soluta vitae!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#c2" data-parent="#accordion">健身教练会把把这些增肌技巧告诉你？</a>
+                    </h4>
+                </div>
+                <div id="c2" class="collapse">
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eius eum, explicabo magnam officiis reiciendis sit ullam voluptate? Consequatur eaque eveniet facere ipsa labore neque nostrum, quibusdam soluta vitae!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" href="#c2" data-parent="#accordion">健身教练会把把这些增肌技巧告诉你？</a>
+                    </h4>
+                </div>
+                <div id="c2" class="collapse">
+                    <div class="panel-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum eius eum, explicabo magnam officiis reiciendis sit ullam voluptate? Consequatur eaque eveniet facere ipsa labore neque nostrum, quibusdam soluta vitae!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+<!--------------------留言板-------------------------------->
+	<div class="row">
+		<h3 class="title col-md-8 col-sm-8 col-xs-8">给我们留言</h3>	
+		<div id="message-board" class=" col-md-12 col-sm-12 col-xs-12">
+			<div class="media">
+				<div class="media-left">
+					<img height="100" width="100" src="img/t1.jpg"/>
+				</div>
+				<div class="media-body">
+					<div class="col-md-5 col-sm-12 col-xs-12">用户名</div>
+					<div class="col-md-7 col-sm-12 col-xs-12"><p>发表于2016-9-5 13:13:59</p></div>
+					<p class="col-md-12">怎么制定符合自己的健身计划?</p>
+					<a href="#" class="">回复</a>
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<img height="100" width="100" src="img/t2.jpg"/>
+				</div>
+				<div class="media-body">
+					<div class="col-md-5 col-sm-12 col-xs-12">用户名</div>
+					<div class="col-md-7 col-sm-12 col-xs-12"><p>发表于2016-9-5 13:13:59</p></div>
+					<p class="col-md-12">怎么制定符合自己的健身计划?</p>
+					<a href="#" class="">回复</a>
+				</div>
+			</div>
+			<div class="media">
+				<div class="media-left">
+					<img height="100" width="100" src="img/t3.jpg"/>
+				</div>
+				<div class="media-body">
+					<div class="col-md-5 col-sm-12 col-xs-12">用户名</div>
+					<div class="col-md-7 col-sm-12 col-xs-12"><p>发表于2016-9-5 13:13:59</p></div>
+					<p class="col-md-12">怎么制定符合自己的健身计划?</p>
+					<a href="#" class="">回复</a>
+				</div>
+			</div>
+		</div>
+
+		<div class=" col-md-12 col-sm-12 col-xs-12">
+			<ul class="pager">	 
+				<li><a href="">1</a></li>
+				<li><a href="">2</a></li>
+				<li class="active"><a href="">3</a></li>
+				<li><a href="">4</a></li>
+				<li><a href="">5</a></li>
+			</ul>
+			<form id="message">
+				&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp昵称：<input type="text" id="name"><br><br>
+				留言内容：<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea id="textarea" cols="60" rows="10"></textarea><br>
+				<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="button" id="words_written">留言</button>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- TODO 基于 jQuery 实现的 -->
+<script src="js/jquery-1.11.3.js"></script>
+<!-- TODO Bootstrap的插件文件 -->
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/index.js"></script>
+</body>
+</html>

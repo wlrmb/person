@@ -1,0 +1,438 @@
+*{
+	margin:0;
+	padding:0;
+	font-family:"Microsoft YaHei";
+	/*box-sizing:border-box;*/
+}
+body{
+	min-width:1200px;
+}
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+	color:#fff;
+}
+.top-bar{
+	width:100%;
+	height:40px;
+	background:#333333;
+	display:block;
+}
+.tbody{
+	width:1200px;
+	margin:0 auto;
+}
+.title{
+	width:100%;
+	height:100px;
+	background:#59B433;
+	margin:5px 0 10px 0;
+	position:relative;
+}
+.logo{
+	margin:10px 10px 10px 20px;
+}
+.title h1{
+	font-size:30px;
+	position:absolute;
+	top:18px;
+	right:35px;
+}
+.title i{
+	font-size:16px;
+	position:absolute;
+	top:65px;
+	right:35px;
+	color:#fff;
+}
+.site-category{
+	float:left;
+	width:240px;
+	height:460px;
+	background:#112D5E;
+}
+.site-category ul{
+	list-style:none;
+	padding:0;
+}
+.site-category li{
+	height:40px;
+	width:240px;
+	line-height:40px;
+}
+.site-category li:hover{
+	background:#646464;
+}
+.j-category a{
+	position: relative;
+    display: block;
+    padding-left: 30px;
+	position:relative;
+}
+.j-category div{
+	display:none;
+}
+.iconfont{
+	font-style: normal;
+	font-weight:bold;
+	position:absolute;
+	top:0;
+	right:10px;
+}
+
+/*
+.homeSlider img{
+	float:right;
+	display:none;
+}
+.homeSlider .visible img{
+	display:block;
+}
+*/
+/*************轮播图****************/
+
+.slider {
+	width: 960px;
+	height:460px;
+	margin-top:10px;
+	position:relative;
+	overflow:hidden;
+}
+.slider .imgs {
+	position:absolute;
+	top: 0;  
+	left: 0;
+	height:460px;
+	width:2880px
+}
+.slider .imgs li{
+	float:left;
+}
+.slider .idxs{
+	float:right;
+	position:absolute;
+	right:60px;
+	bottom:30px;
+}
+.slider .idxs li {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    display: inline-block;
+    background: #eee;
+    border-radius: 50%;
+    text-align: center;
+    color: #000;    
+    cursor: pointer;
+    margin-left:10px;
+	position:relative;
+}
+.slider .idxs li:hover,.slider .idxs li.hover {
+    background:#7f7;/*#b61b1f;*/
+	color:#FFF;
+}
+
+/*************小图****************/
+.pageMain{
+	width:100%;
+	background:#F5F5F5;
+	overflow:hidden;
+}
+.pageMain h2{
+	padding-top:40px;
+	margin-bottom:10px;
+}
+.page-left{
+	float:left;
+	width:220px
+	height:600px;
+}
+.page-right{
+	float:right;
+	width:980px;
+	display:block;
+	
+}
+.page-right li{
+	display:inline-block;
+	margin:0 0 20px 20px;
+	position:relative;
+}
+.page-right li:hover{
+	position:relative;
+	top:-10px;
+	left:0;
+	margin-top:-5px;
+	/*box-shadow:4px 4px 10px #59B433;*/
+	box-shadow:0 10px 20px #666;
+}
+
+.page-right h4{
+	text-align:center;
+}
+.page-right h4 a{
+	color:#000;
+}
+.page-right h4 a:hover{
+	color:#000;
+	text-decoration:underline;
+}
+.page-right p{
+	text-align:center;
+	color:#e4393c;
+} 
+.cover{
+	color:#0f0;
+	width:220px;
+	height:100px;
+	border:1px solid  red;
+	background:rgba(0,0,0,0.5);
+	position:absolute;
+	bottom:45px;
+	left:0px;
+	display:none;
+}
+
+
+
+
+/*************************选择推荐************************/
+.page-foot{
+	padding-top:30px;
+}
+.nav,.container {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	background:#F5F5F5;
+}
+.container{
+	border-top:1px solid #83C44E;
+	background:#fafafa;
+}
+.nav li {
+	display: inline-block;
+	padding: 8px 12px 8px 10px;
+}
+.nav li.active{
+	border:1px solid #83C44E;
+	border-bottom:2px solid #fafafa;
+	position:relative;
+	bottom:-1px;
+	background:#fafafa;
+}
+.nav li a {
+	color: #000;
+	text-decoration: none;
+}
+.nav li.active a {
+	font-weight: bold;
+}
+.item {
+	width: 30%;
+	overflow: hidden;
+	display: inline-block;
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+/*************************最底部*************************/
+.footer{
+	margin-top:20px;
+	padding-top:20px;
+	border-top:1px solid #ddd;
+	text-align:center;
+}
+.footer li{
+	display:inline-block;
+}
+.foot li{
+	border-right:1px solid #ddd;
+	margin-right:10px;
+	padding-right:10px;
+}
+.footer a{
+	color:#757575;
+}
+.footer a:hover{
+	color:#0f0;
+}
+.footer .lianjie{
+	border:0;
+	padding-right:0;
+}
+.footer h5{
+	color:#757575;
+	font-weight:normal;
+}
+.v-logo{
+	margin-top:10px;
+}
+
+
+/*************************最顶部*************************/
+.top-container{
+	width:1200px;
+	margin:0 auto;
+	line-height:40px;
+}
+.address{
+	float:left;
+	color:#fff;
+	padding-left:10px;
+}
+.address label{
+	color:#B0ACAC;
+}
+.prov{
+	border-radius:4px;
+	position:relative;
+}
+.cities{
+	background:#fff;
+	width:200px;
+	border:1px solid #000;
+	min-height:200px;
+	position:absolute;
+	left:187px;
+	top:30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******最顶部右侧********/
+.top-container ul{
+	float:right;
+}
+.top-container li{
+	float:left;
+	font-size:14px;
+	color:#B0ACAC;
+}
+.top-container a{
+	border-right:1px solid #ccc;
+	margin-right:10px;
+	padding-right:10px;
+	color:#B0ACAC;
+}
+.top-container .discuss{
+	border-right:0;
+}
+.top-container a:hover{
+	color:#fff;
+}
+/**********左面导航ul*******************/
+#show-box div{
+	width:250px;
+	background:#fff;
+	position:relative;
+	left:240px;
+	top:-200px;
+	z-index:100;
+	display:none;
+}
+#show-box div.show{
+	display:block;
+}
+#show-box li{
+	padding-left:10px;
+}
+
+
+
+/**********登录框*******************/
+.login{
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background: rgba(0,0,0, .7);
+	z-index: 999;
+}
+.login-box{
+	width:400px;
+	margin: 10% auto 0;
+	border: 1px solid #aaa;
+	border-radius: 3px;
+	box-shadow: 0 0 4px #aaa;
+	background: #fff;
+	padding: 15px;
+	text-align:center;
+}
+#close-button{
+	width:15px;
+	height:15px;
+	border:1px solid #bbb;
+	float:right;
+	padding:0;
+	line-height:15px;
+	cursor:pointer;
+}
+.login h3{
+	color:#666;
+	margin-bottom:20px;
+}
+.login p{
+	border:1px solid #5CB85C;
+	width:300px;
+	height:30px;
+	margin:0 auto 20px;
+	line-height:30px;
+	background: rgba(200,255,200, .7);
+}
+.login-form input{
+	width:300px;
+	height:40px;
+	margin-bottom:20px;
+}
+#login-btn{
+	background:#449D44;
+	border:0;
+	color:#fff;
+}
+#login-btn:hover{
+	background:#5CB85C;
+	cursor:pointer;
+}
+.login-ul{
+	clear:both;
+}
+.login-ul a{
+	color:#666;
+	padding:0 5px;
+}
+.login-ul a:hover{
+	color:#5CB85C;
+}
+.login-ul li{
+	display:inline-block;
+}
+#login-form-register{
+	border-right:1px solid #5CB85C;
+}

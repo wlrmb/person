@@ -1,0 +1,262 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>用户注册</title>
+	<link rel="icon" href="img/logo.icon"/>
+
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	body{
+		height:100%;
+		color:#666;
+		background:#ccc;
+		background:url(img/background2.jpg);
+		background-size:cover;
+	
+	}
+	.hide{
+		display:none;
+	}
+	.show{
+		display:inline-block;
+	}
+	
+	.wraper{          
+		position: absolute;
+		min-width:680px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+		z-index: 3;
+		background:#FFF;
+		padding:30px;
+		opacity:0.9;
+	}
+	h1{
+		text-align:center;
+		margin:20px;
+	}
+
+	input{
+		height:30px;
+		width:300px;
+		margin-bottom:20px;
+		padding:5px 10px 5px 10px;
+		font-size:18px;
+		border:1px solid #E8E8E8;
+	}
+	#btn{
+		color:#fff;
+		background:#449D44;
+		border:0;
+		width:320px;
+		height:40px;
+		margin-left:100px;
+		cursor: pointer;
+		display:block;
+	}
+	#btn:hover{
+		background:#5CB85C;
+	}
+	.control-label{
+		display:inline-block;
+		text-align:right;
+		width:90px;
+		font-weight:bold;
+	}
+	.show-label{
+		height:40px;
+		width:31%;
+	}
+	.true{color:#5CB85C;}
+	.default{color:#bbb;}
+	.error{color:#f00;}
+</style>
+<body>
+	<canvas id="canvas"></canvas>
+	<div class="wraper">
+				<div class="v-logo"><a href="index.html"><img src="img/logo.jpg" alt=""></a></div>
+				<h1>注册账号</h1>
+				<form id="register">
+					<div class="form-group">
+						<label class="control-label" for="username">用户名：</label>
+						<input id="username" type="text" name="username" required autofocus placeholder="请输入名称" pattern="^[a-zA-Z0-9]{3,8}$">
+						<label id="usernametip" class="show-label">请输入3-8位字母或数字</label>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="pwd">密码：</label>
+						<input id="pwd" type="password" name="pwd" required placeholder="请输入密码" pattern="^[a-zA-Z0-9]{6,10}$">
+						<label id="pwdtip" class="hide">请输入6-10位字母或数字</label>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="rpwd">确认密码：</label>
+						<input id="rpwd" type="password" name="rpwd" required placeholder="请确认密码" pattern="^[a-zA-Z0-9]{6,10}$">
+						<label id="rpwdtip" class="hide">请重新输入密码</label>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="email">电子邮箱：</label>
+						<input id="email" type="email" name="email" required placeholder="请输入邮箱">
+						<label id="emailtip" class="hide">例如：xx@xx.com</label>
+					</div>	
+						<input id="btn" type="button" value="立即注册">
+				</form>
+	</div>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		var username = document.getElementById("username");
+		var usernameTip = document.getElementById("usernametip");
+
+		var pwd=document.getElementById("pwd");
+		var pwdTip=document.getElementById("pwdtip");
+		formValidity(pwd,pwdTip,{
+			"default" : "请输入6至10位的英文或数字",
+			"error" : "密码"
+		});
+		var rpwd=document.getElementById("rpwd");
+		var rpwdTip=document.getElementById("rpwdtip");
+		formValidity(rpwd,rpwdTip,{
+			"default" : "请重新输入密码",
+			"error" : "重新输入密码"
+		});
+		var email=document.getElementById("email");
+		var emailTip=document.getElementById("emailtip");
+		formValidity(email,emailTip,{
+			"default" : "请输入邮箱",
+			"error" : "邮箱"
+		});
+		/***********验证通式*************/
+		username.onblur=function(){		//验证用户名
+			$.post('data/select.php',{username:$("#username").val()},function(data,msg,xhr){
+				console.log(data);
+				console.log('开始处理 响应数据:');
+					if( data=='erro'){
+						usernameTip.className = "show show-label error";
+						usernameTip.firstChild.nodeValue = "此用户名已被注册";
+						console.log(1);
+						$("#btn").attr({"disabled":"disabled"});
+					}							
+			}); 
+			if(username.validity.valid){
+					usernameTip.className = "show show-label true";
+					usernameTip.firstChild.nodeValue = "用户名输入正确.";
+				}else if(username.validity.valueMissing){
+					usernameTip.className = "show show-label error";
+					usernameTip.firstChild.nodeValue = "用户名不能为空.";
+				}else if(username.validity.patternMismatch){
+					usernameTip.className = "show show-label error";
+					usernameTip.firstChild.nodeValue = "用户名输入有误.";
+				}
+		}
+		function formValidity(elem,elemTip,text){
+			
+			elem.onfocus = function(){
+				elemTip.className = "show show-label default";
+				elemTip.firstChild.nodeValue = text.default;
+			}
+			elem.onblur = function(){
+				if(elem.validity.valid){
+					elemTip.className = "show show-label true";
+					elemTip.firstChild.nodeValue = text.error+"输入正确.";
+				}else if(elem.validity.valueMissing){
+					elemTip.className = "show show-label error";
+					elemTip.firstChild.nodeValue = text.error+"不能为空.";
+				}else if(elem.validity.patternMismatch){
+					elemTip.className = "show show-label error";
+					elemTip.firstChild.nodeValue = text.error+"输入有误.";
+				}
+			}
+		}
+		/***********php**********/
+		
+		var loginUserName=null;
+		$("#btn").click(function(e){
+			e.preventDefault();
+			//表单序列化	
+			if(username.validity.valid&&pwd.validity.valid&&email.validity.valid){
+				var requestData = $('#register').serialize();
+				console.log(requestData);
+				//异步提交：$.post  $.ajax
+				
+				$.post('data/register.php',requestData,function(data,msg,xhr){
+					console.log('开始处理 响应数据:');
+					if( parseInt(data)>0 ){
+						$('.wraper').html('注册成功！您的编号为：'+data+'<br>当前窗口3s后自动关闭');
+						setTimeout(function(){$('.wraper').fadeOut();window.location.href="index.html"},2000);
+						
+					}
+				});
+			}
+		});
+		/***********气泡************/
+
+		var canvas = document.getElementById('canvas'); //画布对象
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		var context = canvas.getContext("2d");
+		function Ball(){
+			//TODO 属性
+			this.x = Math.random()*(canvas.width-60)+30;
+			this.y = canvas.height-30;
+			this.r = Math.floor(Math.random()*255);
+			this.g = Math.floor(Math.random()*255);
+			this.b = Math.floor(Math.random()*255);
+			this.color = "rgb("+this.r+","+this.g+","+this.b+")";
+			this.alpha = 1;
+			//TODO 方法
+			//TODO 绘制静态效果
+			this.paint = function(){
+				context.fillStyle = this.color;
+				context.globalAlpha = this.alpha;
+				context.beginPath();
+				context.arc(this.x,this.y,30,0,Math.PI*2);
+				context.closePath();
+				context.fill();
+			}
+			//TODO 移动方法
+			this.move = function(){
+				this.y--;
+				this.alpha -= 0.005;
+			}
+		}
+		//TODO 创建用于存储所有小球的数组
+		var balls = [];
+
+		//TODO 创建函数 - 用于创建小球
+		function createBall(){
+			var ball = new Ball();
+
+			balls.push(ball);
+		}
+		function controlBall(){
+			for(var i=0;i<balls.length;i++){
+				var ball = balls[i]
+				ball.paint();
+				ball.move();
+				if(ball.alpha <= 0){
+					balls.splice(i,1);
+				}
+			}
+		}
+
+		var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+		//TODO 自调函数
+		(function move(){
+			//TODO 清除整个画布
+			context.clearRect(0,0,canvas.width,canvas.height);
+			controlBall();
+			requestAnimationFrame(move);
+		})();
+
+		setInterval(function(){
+			createBall();
+		},500);
+	</script>
+</body>
+</html>

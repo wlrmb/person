@@ -1,0 +1,17 @@
+SET NAMES UTF8;
+DROP DATABASE IF EXISTS ff;
+CREATE DATABASE ff CHARSET=UTF8;
+USE ff;
+CREATE TABLE users(
+	pid INT PRIMARY KEY AUTO_INCREMENT,
+	name VARCHAR(64),
+	pwd VARCHAR(64),
+	email VARCHAR(64)
+);
+INSERT INTO users VALUES(
+	null,
+	'aaa',
+	'aaaaaa',
+	'aa@a'
+
+);
